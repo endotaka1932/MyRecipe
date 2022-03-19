@@ -23,10 +23,10 @@
 
     input[type='email'] {
         @include input;
-        border-bottom: 0;
     }
     input[type='password'] {
-        @include input
+        @include input;
+        border-top: 0;
     }
     input[type='submit'] {
         @include input;
@@ -36,5 +36,16 @@
         color: #fff;
         font-size: 18px;
         border-radius: 5px;
+    }
+
+    &_links {
+        display: flex;
+        justify-content: center;
+        a {
+            display: block;
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 10px;
+        }
     }
 }
