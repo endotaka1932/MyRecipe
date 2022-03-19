@@ -1,0 +1,14 @@
+.devise
+  .devise_image
+    = image_tag 'cook.png'
+  %h1 My Recipe
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: 'email_field'
+    .field
+      = f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード', class: 'password_field'
+    .actions
+      = f.submit "新規登録"
+  .devise_links    
+    = render "devise/shared/links"
