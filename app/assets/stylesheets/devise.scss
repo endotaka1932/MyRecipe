@@ -1,0 +1,40 @@
+@mixin input {
+    display: block;
+    margin: auto;
+    height: 55px;
+    width: 300px;
+    border-color: #E3E9EC;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.devise {
+    margin-top: 60px;
+    &_image {
+        img {
+            display: block;
+            margin: auto;
+        }
+    }
+    
+    h1 {
+        text-align: center;
+    }
+
+    input[type='email'] {
+        @include input;
+        border-bottom: 0;
+    }
+    input[type='password'] {
+        @include input
+    }
+    input[type='submit'] {
+        @include input;
+        width: 304px;
+        margin-top: 20px;
+        background-color: #F77C42;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+}
