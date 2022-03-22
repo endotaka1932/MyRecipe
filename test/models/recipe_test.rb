@@ -3,7 +3,6 @@
 # Table name: recipes
 #
 #  id         :bigint           not null, primary key
-#  category   :integer
 #  content    :text
 #  info       :text
 #  title      :string           not null

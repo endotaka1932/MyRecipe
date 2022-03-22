@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2022_03_19_061812) do
     t.string "url"
     t.text "info"
     t.text "content"
-    t.integer "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
