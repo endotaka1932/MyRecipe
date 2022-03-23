@@ -24,5 +24,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :lockable
 
+  belogns_to :recipe_categorie
   has_many :recipes, dependent: :destroy
 end
