@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_03_23_112617) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.bigint "recipe_id", null: false
+    t.bigint "recipe_id"
     t.string "foodclass"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
