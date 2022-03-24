@@ -13,8 +13,11 @@ class RecipesController < ApplicationController
 
     def create
         @recipe = current_user.recipes.build(recipe_params)
+        @category_ids = params[:recipe][:categorys]
         if @recipe.save
-          redirect_to new_recipe_path
+            @recipe.get_category_ids(@category_ids, @recipe)
+            
+            redirect_to new_recipe_path
         else
             render :new
         end

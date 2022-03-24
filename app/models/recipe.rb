@@ -18,4 +18,16 @@
 class Recipe < ApplicationRecord
     
     belongs_to :user
+    has_many :recipe_categorys
+    has_many :categorys, through: :recipe_categorys, dependent: :destroy
+
+    def get_category_ids(category_ids, recipe)
+        if category_ids.size >= 2
+            category_ids.shift
+            category_ids.each do |category_id|
+                category = Category.find(category_id.to_i)
+                recipe.categorys << category
+            end
+        end
+    end
 end

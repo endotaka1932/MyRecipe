@@ -13,4 +13,5 @@
 #  index_categories_on_recipe_id  (recipe_id)
 #
 class Category < ApplicationRecord
+    has_many :recipe_categorys
 end
