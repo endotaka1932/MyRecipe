@@ -15,13 +15,8 @@ class RecipesController < ApplicationController
         @recipe = current_user.recipes.build(recipe_params)
         @category_ids = params[:recipe][:categorys]
         if @recipe.save
-            if @category_ids.size >= 2
-                @category_ids.shift
-                @category_ids.each do |category_id|
-                    category = Category.find(category_id.to_i)
-                    @recipe.categorys << category
-                end
-            end
+            @recipe.get_category_ids(@category_ids, @recipe)
+            
             redirect_to new_recipe_path
         else
             render :new
