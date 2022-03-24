@@ -17,9 +17,8 @@
     = f.text_area :content
   %div
     = f.label :category, 'カテゴリー'
-  -# %div
-  -#   - Recipe.categorys.each do |key, value|
-  -#     = f.check_box :category , {multiple: true}, key[0], nil
-  -#     #{key}
+  %div
+    = f.collection_check_boxes :categorys, Category.all, :id, :foodclass
+
   .active
     = f.submit '保存'

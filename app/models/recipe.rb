@@ -18,6 +18,6 @@
 class Recipe < ApplicationRecord
     
     belongs_to :user
-    belongs_to :recipe_category
-    has_many :categorys, dependent: :destroy
+    has_many :recipe_categorys
+    has_many :categorys, through: :recipe_categorys, dependent: :destroy
 end
