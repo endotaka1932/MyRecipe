@@ -1,1 +1,11 @@
-aa
+.container
+  %h2 MY RECIPE
+  - @recipes.each do |recipe|
+    .recipe-row
+      .recipe-category-imag
+        -# = image_tag ''
+      .recipe-intro
+        .recipe-title
+          = recipe.title
+        .recipe-info
+          = recipe.info
