@@ -1,7 +1,14 @@
 @import 'devise';
+@import 'header';
+@import 'recipe';
 
+
+html {
+    width: 100%;
+}
 
 body {
+    margin: 0;
     a {
         text-decoration: none;
         color: #000000;
