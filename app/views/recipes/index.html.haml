@@ -5,9 +5,12 @@
   - @recipes.each do |recipe|
     .recipe-row
       .recipe-category-imag
-        -# = image_tag ''
+        = image_tag 'Bitmap.png'
       .recipe-intro
         .recipe-title
-          = recipe.title
+          %p= recipe.title
         .recipe-info
-          = recipe.info
+          %span= recipe.info
+      .recipe-trash
+        %i.fa-solid.fa-trash
+        

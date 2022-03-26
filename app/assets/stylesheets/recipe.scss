@@ -1,0 +1,32 @@
+.container {
+    padding: 15px 0;
+    width: 90%;
+    margin: auto;
+
+}
+
+.recipe-row {
+    display: flex;
+    padding: 8px 0;
+    border-bottom:1px solid #F6F6F6 ;
+
+    .recipe-category-imag {
+
+    }
+
+    .recipe-intro {
+        margin-left: 20px;
+        .recipe-title {
+            p {
+                font-size: 14px;
+                margin: 7px 0 0 0;
+            }
+        }
+        .recipe-info {
+            span {
+                font-size: 10px;
+                opacity: 0.5;
+            }
+        }
+    }
+}
