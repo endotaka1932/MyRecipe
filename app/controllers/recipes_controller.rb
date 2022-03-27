@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     end
 
     def show
-        @recipe = Recipe.find(params[:id])
+        @recipe = current_user.recipes.find(params[:id])
     end
 
     def new
@@ -25,7 +25,21 @@ class RecipesController < ApplicationController
         end
     end
 
+    def edit
+        @recipe = current_user.recipes.find(params[:id])
+        @category_ids = @recipe.categorys.pluck(:id)
+    end
+
     def update
+        @recipe = current_user.recipes.find(params[:id])
+        @category_ids = params[:recipe][:categorys]
+        if @recipe.update(recipe_params)
+            @recipe.get_category_ids(@category_ids, @recipe)
+
+            redirect_to recipe_path
+        else
+            render :edit
+        end
     end
 
     def destroy
