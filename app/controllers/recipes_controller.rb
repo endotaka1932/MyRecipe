@@ -34,6 +34,7 @@ class RecipesController < ApplicationController
         @recipe = current_user.recipes.find(params[:id])
         @category_ids = params[:recipe][:categorys]
         if @recipe.update(recipe_params)
+            RecipeCategory.where(recipe_id: @recipe.id).destroy_all
             @recipe.get_category_ids(@category_ids, @recipe)
 
             redirect_to recipe_path
