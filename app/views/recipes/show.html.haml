@@ -1,0 +1,14 @@
+.header
+  .header-title
+    %h2 My Recipe
+.container    
+  .recipe-row
+    .recipe-intro
+      .recipe-title
+        %p= @recipe.title
+      .recipe-url
+        %a= @recipe.url
+      .recipe-info
+        %span= @recipe.info
+      .recipe-content
+        %p= @recipe.content

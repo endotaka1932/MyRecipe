@@ -2,9 +2,11 @@ class RecipesController < ApplicationController
     before_action :authenticate_user!
 
     def index
+        @recipes = current_user.recipes.all
     end
 
     def show
+        @recipe = current_user.recipes.find(params[:id])
     end
 
     def new
@@ -23,10 +25,28 @@ class RecipesController < ApplicationController
         end
     end
 
-    def update
+    def edit
+        @recipe = current_user.recipes.find(params[:id])
+        @category_ids = @recipe.categorys.pluck(:id)
     end
 
-    def delete
+    def update
+        @recipe = current_user.recipes.find(params[:id])
+        @category_ids = params[:recipe][:categorys]
+        if @recipe.update(recipe_params)
+            RecipeCategory.where(recipe_id: @recipe.id).destroy_all
+            @recipe.get_category_ids(@category_ids, @recipe)
+
+            redirect_to recipe_path
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        recipe = Recipe.find(params[:id])
+        recipe.destroy!
+        redirect_to root_path
     end
 
     private
