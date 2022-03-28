@@ -1,0 +1,41 @@
+@mixin form($value) {
+    width: 100%;
+    height: $value;
+    background-color: #f6f6f6;
+    border: none;
+    border-radius: 0 5px 5px 5px;
+    margin-bottom: 18px;
+}
+
+input::placeholder {
+    font-size: 5px;
+}
+textarea::placeholder {
+    font-size: 5px;
+}
+
+label {
+    display: block;
+    float: left;
+    width: 53px;
+    text-align: center;
+}
+
+.item {
+    font-size: 12px;
+    color: $primary-color;
+    padding: 5px 3px 2px 3px;
+    border: 2.5px solid #f6f6f6;
+    border-radius: 8px 8px 0 0;
+}
+
+.text {
+  @include form(25px);
+
+    &_info {
+        @include form(50px);
+    }
+    &_content {
+        @include form(120px)
+    }
+}

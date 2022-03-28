@@ -1,6 +1,4 @@
-.header
-  .header-title
-    %h2 My Recipe
+= render 'commons/header'
 .container    
   - @recipes.each do |recipe|
     .recipe-row
@@ -16,4 +14,5 @@
       .recipe-trash
         = link_to recipe_path(recipe.id), data: { method: 'delete', confirm: '本当に削除しますか' } do
           %i.fa-solid.fa-trash
-          
+
+= render 'commons/footer'

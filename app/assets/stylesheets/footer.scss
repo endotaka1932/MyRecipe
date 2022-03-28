@@ -1,0 +1,31 @@
+.fa-solid {
+    font-size: 1.8em;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    &_post-btn {
+        position: relative;
+
+        .fa-circle-plus {
+            position: absolute;
+            color: $primary-color;
+            font-size: 4em;
+            background-color: #fff;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+    }
+    &_menu {
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 0;
+        a {
+            color: $primary-color;
+        }
+
+        box-shadow: 0 -2px 20px 0 rgb(173, 173, 173);
+    }
+}

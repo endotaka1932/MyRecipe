@@ -1,24 +1,27 @@
-= form_with(model: @recipe, local: true) do |f|
-  %div
-    = f.label :title, '料理名'
-  %div
-    = f.text_field :title 
-  %div
-    = f.label :url, 'URL'
-  %div
-    = f.text_field :url
-  %div
-    = f.label :info, '補足情報'
-  %div
-    = f.text_field :info
-  %div
-    = f.label :content, 'メモ'
-  %div
-    = f.text_area :content
-  %div
-    = f.label :category, 'カテゴリー'
-  %div
-    = f.collection_check_boxes :categorys, Category.all, :id, :foodclass, { checked: @category_ids.map(&:to_param) }
+= render 'commons/header'
+.container
+  = form_with(model: @recipe, local: true) do |f|
+    %div
+      = f.label :title, '料理名', class: 'item'
+    %div
+      = f.text_field :title, class: 'text'
+    %div
+      = f.label :url, 'URL', class: 'item'
+    %div
+      = f.text_field :url, class: 'text'
+    %div
+      = f.label :info, 'URL情報', class: 'item'
+    %div
+      = f.text_area :info, class: 'text_info'
+    %div
+      = f.label :content, 'メモ', class: 'item'
+    %div
+      = f.text_area :content, class: 'text_content'
+    %div
+      = f.label :category, 'カテゴリー'
+    %div
+      = f.collection_check_boxes :categorys, Category.all, :id, :foodclass, { checked: @category_ids.map(&:to_param) }
 
-  .active
-    = f.submit '更新'
+    .active
+      = f.submit '更新'
+= render 'commons/footer'

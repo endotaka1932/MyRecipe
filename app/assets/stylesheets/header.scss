@@ -1,6 +1,6 @@
 .header {
     height: 60px;
-    background: #F77C42;
+    background: $primary-color;
 
     .header-title {
         h2 {
@@ -8,7 +8,6 @@
             text-align: center;
             color: #fff;
             line-height: 60px;
-            font-family: "Helvetica Neue";
         }
     }
 }

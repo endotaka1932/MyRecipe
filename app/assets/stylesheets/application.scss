@@ -1,7 +1,10 @@
+@import 'variables';
 @import 'devise';
 @import 'header';
 @import 'recipe';
 @import 'font-awesome';
+@import 'footer';
+@import 'form';
 
 
 html {
@@ -9,6 +12,8 @@ html {
 }
 
 body {
+    font-family: "Helvetica Neue";
+    
     margin: 0;
     a {
         text-decoration: none;

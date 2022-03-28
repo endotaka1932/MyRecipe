@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
         if @recipe.save
             @recipe.get_category_ids(@category_ids, @recipe)
             
-            redirect_to new_recipe_path
+            redirect_to root_path
         else
             render :new
         end
