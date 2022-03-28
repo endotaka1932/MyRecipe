@@ -1,6 +1,4 @@
-.header
-  .header-title
-    %h2 My Recipe
+= render 'commons/header'
 .container    
   .recipe-row
     .recipe-intro
@@ -12,3 +10,5 @@
         %span= @recipe.info
       .recipe-content
         %p= @recipe.content
+
+= render 'commons/footer'
