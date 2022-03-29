@@ -14,19 +14,17 @@ textarea::placeholder {
     font-size: 5px;
 }
 
-label {
-    display: block;
-    float: left;
-    width: 53px;
-    text-align: center;
-}
-
 .item {
     font-size: 12px;
     color: $primary-color;
     padding: 5px 3px 2px 3px;
     border: 2.5px solid #f6f6f6;
     border-radius: 8px 8px 0 0;
+
+    display: block;
+    float: left;
+    width: 53px;
+    text-align: center;
 }
 
 .text {
@@ -36,6 +34,15 @@ label {
         @include form(50px);
     }
     &_content {
-        @include form(120px)
+        @include form(80px)
     }
+}
+
+.checkbox {
+    display: flex;
+    justify-content: space-around;
+}
+
+label {
+    font-size: 12px;
 }

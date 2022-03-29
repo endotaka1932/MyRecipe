@@ -18,7 +18,7 @@
     %div
       = f.text_area :content, class: 'text_content'
     %div
-      = f.label :category, 'カテゴリー'
+      = f.label :category, 'カテゴリー', class: 'category-item'
     %div
       = f.collection_check_boxes :categorys, Category.all, :id, :foodclass, { checked: @category_ids.map(&:to_param) }
 

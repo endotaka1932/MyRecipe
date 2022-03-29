@@ -18,8 +18,8 @@
     %div
       = f.text_area :content, class: 'text_content', placeholder: ' 例) 炊飯器で一発!めちゃくちゃ簡単'
     %div
-      = f.label :category, 'カテゴリー'
-    %div
+      = f.label :category, 'カテゴリー', class: 'category-item'
+    %div.checkbox
       = f.collection_check_boxes :categorys, Category.all, :id, :foodclass
 
     .active
