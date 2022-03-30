@@ -1,9 +1,12 @@
 = form_with(model: @assessment, url:recipe_assessments_path, local: true) do |f|
-
   %div
     = f.label :taste, '美味しさ'
   %div.starform#star
     = f.hidden_field :taste, id: :review_star
+
+  .active
+    = f.submit 'submit', class: 'active-btn'
+
 
   :javascript
     $('#star').raty({
@@ -11,6 +14,6 @@
       starOff:  '#{asset_path('star-off.png')}',
       starOn : '#{asset_path('star-on.png')}',
       starHalf: '#{asset_path('star-half.png')}',
-      scoreName: 'post[rate]',
+      scoreName: 'assessment[taste]',
       half: true,
     });
