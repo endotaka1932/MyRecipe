@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'recipes#index'
 
-  resources :recipes
+  resources :recipes do
+    resources :assessments, only: [:new, :create]
+  end
 end

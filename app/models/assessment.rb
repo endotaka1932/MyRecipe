@@ -16,4 +16,5 @@
 #  index_assessments_on_recipe_id  (recipe_id)
 #
 class Assessment < ApplicationRecord
+    belongs_to :recipe
 end
