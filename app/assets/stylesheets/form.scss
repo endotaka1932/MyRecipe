@@ -41,8 +41,18 @@ textarea::placeholder {
 .checkbox {
     display: flex;
     justify-content: space-around;
+    margin-top: 10px;
 }
+
 
 label {
     font-size: 12px;
 }
+.category-item {
+    margin-bottom: 5px;
+    padding: 3px;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+}
+

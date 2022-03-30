@@ -19,9 +19,9 @@
       = f.text_area :content, class: 'text_content'
     %div
       = f.label :category, 'カテゴリー', class: 'category-item'
-    %div
+    %div.checkbox
       = f.collection_check_boxes :categorys, Category.all, :id, :foodclass, { checked: @category_ids.map(&:to_param) }
 
     .active
-      = f.submit '更新'
+      = f.submit 'update', class: 'active-btn'
 = render 'commons/footer'
