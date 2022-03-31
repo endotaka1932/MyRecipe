@@ -16,6 +16,18 @@ class AssessmentsController < ApplicationController
         end
     end
 
+    def edit
+
+    end
+
+    def update
+
+    end
+
+    def destroy
+        
+    end
+
     private
         def assessment_params
             params.require(:assessment).permit(:taste, :easily, :cost, :revenge)

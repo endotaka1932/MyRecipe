@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_30_105008) do
   create_table "assessments", force: :cascade do |t|
     t.bigint "recipe_id", null: false
     t.float "taste"
-    t.float "easier"
+    t.float "easily"
     t.float "cost"
     t.boolean "revenge"
     t.datetime "created_at", precision: 6, null: false

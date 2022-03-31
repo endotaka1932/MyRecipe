@@ -4,7 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  cost       :float
-#  easier     :float
+#  easily     :float
 #  revenge    :boolean
 #  taste      :float
 #  created_at :datetime         not null

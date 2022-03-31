@@ -3,7 +3,7 @@ class CreateAssessments < ActiveRecord::Migration[6.0]
     create_table :assessments do |t|
       t.references :recipe, null: false
       t.float :taste
-      t.float :easier
+      t.float :easily
       t.float :cost
       t.boolean :revenge
       t.timestamps
