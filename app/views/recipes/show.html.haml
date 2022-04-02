@@ -15,4 +15,14 @@
   = link_to '評価ー編集', edit_recipe_assessment_path(@recipe.id)
   = link_to '評価表示', recipe_assessment_path(@recipe.id)
 
+  .assessment
+    %p 美味しさ
+    .star-vlaue#star-taste1
+    %p 作りやすさ
+    .star-vlaue#star-taste2
+    %p 費用
+    .star-vlaue#star-taste3
+  
+  = render 'commons/star-assessment'
+
 = render 'commons/footer'
