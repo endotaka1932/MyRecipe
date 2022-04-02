@@ -16,14 +16,14 @@
   = link_to '評価表示', recipe_assessment_path(@recipe.id)
 
   - if @recipe.assessment.present?
-    .assessment
+    .assessment.
       %p 美味しさ
       .star-vlaue#star-taste1
       %p 作りやすさ
       .star-vlaue#star-taste2
       %p 費用
       .star-vlaue#star-taste3
-  
+
     = render 'commons/star-assessment'
 
 = render 'commons/footer'

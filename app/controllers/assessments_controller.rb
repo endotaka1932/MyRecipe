@@ -18,6 +18,7 @@ class AssessmentsController < ApplicationController
 
     def edit
         @recipe = Recipe.find(params[:recipe_id])
+        @assessment = @recipe.assessment
     end
 
     def update
