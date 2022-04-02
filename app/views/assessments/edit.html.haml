@@ -1,3 +1,4 @@
+-# = render 'commons/assessment_form'
 = form_with(model: @assessment, url:recipe_assessments_path, local: true) do |f|
   %div
     = f.label :taste, '美味しさ'
@@ -18,7 +19,7 @@
     %label{:for => 'revenge'}
 
   .active
-    = f.submit 'submit', class: 'active-btn'
+    = f.submit 'edit', class: 'active-btn'
 
 
   :javascript
