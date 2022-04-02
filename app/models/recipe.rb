@@ -20,6 +20,7 @@ class Recipe < ApplicationRecord
     belongs_to :user
     has_many :recipe_categorys
     has_many :categorys, through: :recipe_categorys, dependent: :destroy
+    has_one :assessment, dependent: :destroy
 
     def get_category_ids(category_ids, recipe)
         if category_ids.size >= 2

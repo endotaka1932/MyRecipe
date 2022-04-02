@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Category.create!([
-    { foodclass: '米類' },
+    { foodclass: 'ライス' },
     { foodclass: 'スープ' },
     { foodclass: 'メイン' },
     { foodclass: 'サイド' },

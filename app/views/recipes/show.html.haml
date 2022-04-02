@@ -10,5 +10,9 @@
         %span= @recipe.info
       .recipe-content
         %p= @recipe.content
+  = link_to '編集', edit_recipe_path
+  = link_to '評価', new_recipe_assessment_path(@recipe.id)
+  = link_to '評価ー編集', edit_recipe_assessment_path(@recipe.id)
+  = link_to '評価表示', recipe_assessment_path(@recipe.id)
 
 = render 'commons/footer'
