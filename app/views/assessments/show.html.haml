@@ -1,5 +1,44 @@
 .container
   .assessment
     %p 美味しさ
-    .star-vlaue
-      %p= @recipe.assessment.taste
+    .star-vlaue#star-taste1
+    %p 作りやすさ
+    .star-vlaue#star-taste2
+    %p 費用
+    .star-vlaue#star-taste3
+
+  :javascript
+    $('#star-taste1').raty({
+      size     : 36,
+      starOff:  '#{asset_path('star-off.png')}',
+      starOn : '#{asset_path('star-on.png')}',
+      starHalf: '#{asset_path('star-half.png')}',
+      score: '#{@recipe.assessment.taste}',
+      scoreName: 'assessment[taste]',
+      half: true,
+      readOnly: true
+    });
+
+  :javascript
+    $('#star-taste2').raty({
+      size     : 36,
+      starOff:  '#{asset_path('star-off.png')}',
+      starOn : '#{asset_path('star-on.png')}',
+      starHalf: '#{asset_path('star-half.png')}',
+      score: '#{@recipe.assessment.easily}',
+      scoreName: 'assessment[easily]',
+      half: true,
+      readOnly: true
+    });
+
+  :javascript
+    $('#star-taste3').raty({
+      size     : 36,
+      starOff:  '#{asset_path('star-off.png')}',
+      starOn : '#{asset_path('star-on.png')}',
+      starHalf: '#{asset_path('star-half.png')}',
+      score: '#{@recipe.assessment.cost}',
+      scoreName: 'assessment[cost]',
+      half: true,
+      readOnly: true
+    });

@@ -1,5 +1,5 @@
 -# = render 'commons/assessment_form'
-= form_with(model: @assessment, url:recipe_assessments_path, local: true) do |f|
+= form_with(model: @recipe, url:recipe_assessments_path, local: true) do |f|
   %div
     = f.label :taste, '美味しさ'
   %div.starform#star-taste
@@ -15,7 +15,7 @@
   %div
     = f.label :revenge, '再挑戦', class: 'app_checkbox'
   %div.app_checkbox
-    = f.check_box :revenge, id: :revenge
+    = f.check_box :revenge, id: :revenge, checked: @recipe.assessment.revenge?
     %label{:for => 'revenge'}
 
   .active
@@ -28,6 +28,7 @@
       starOff:  '#{asset_path('star-off.png')}',
       starOn : '#{asset_path('star-on.png')}',
       starHalf: '#{asset_path('star-half.png')}',
+      score: '#{@recipe.assessment.taste}',
       scoreName: 'assessment[taste]',
       half: true,
     });
@@ -38,6 +39,7 @@
       starOff:  '#{asset_path('star-off.png')}',
       starOn : '#{asset_path('star-on.png')}',
       starHalf: '#{asset_path('star-half.png')}',
+      score: '#{@recipe.assessment.easily}',
       scoreName: 'assessment[easily]',
       half: true,
     });
@@ -48,6 +50,7 @@
       starOff:  '#{asset_path('star-off.png')}',
       starOn : '#{asset_path('star-on.png')}',
       starHalf: '#{asset_path('star-half.png')}',
+      score: '#{@recipe.assessment.cost}',
       scoreName: 'assessment[cost]',
       half: true,
     });
