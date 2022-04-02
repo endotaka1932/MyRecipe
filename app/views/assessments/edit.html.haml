@@ -1,5 +1,4 @@
--# = render 'commons/assessment_form'
-= form_with(model: @recipe, url:recipe_assessments_path, local: true) do |f|
+= form_with(model: @recipe, url:recipe_assessment_path, local: true) do |f|
   %div
     = f.label :taste, '美味しさ'
   %div.starform#star-taste

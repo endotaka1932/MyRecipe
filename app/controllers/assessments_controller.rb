@@ -1,10 +1,6 @@
 class AssessmentsController < ApplicationController
     before_action :authenticate_user!
 
-    def show
-        @recipe = Recipe.find(params[:recipe_id])
-    end
-
     def new
         recipe = Recipe.find(params[:recipe_id])
         @assessment = recipe.build_assessment
@@ -26,7 +22,8 @@ class AssessmentsController < ApplicationController
 
     def update
         recipe = Recipe.find(params[:recipe_id])
-        if @assessment.update(assessment_pamras)
+        @assessment = recipe.build_assessment(assessment_params)
+        if @assessment.update(assessment_params)
             redirect_to recipe_path(recipe.id)
         else
             render :edit
