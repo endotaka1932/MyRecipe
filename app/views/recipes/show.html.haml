@@ -3,19 +3,18 @@
   .recipe-row
     .recipe-intro
       .recipe-title
-        %p= @recipe.title
+        %h2= @recipe.title
       .recipe-url
-        %a= @recipe.url
-      .recipe-info
-        %span= @recipe.info
+        %a= 'リンク先：' + @recipe.url
+        .recipe-info
+          %span= @recipe.info
       .recipe-content
         %p= @recipe.content
-  = link_to '編集', edit_recipe_path
-  .assessment_btn
-    %p 評価
-    -# = link_to '評価', new_recipe_assessment_path(@recipe.id)
-  = link_to '評価ー編集', edit_recipe_assessment_path(@recipe.id)
-  = link_to '評価表示', recipe_assessment_path(@recipe.id)
+  .btn-action
+    .assessment_btn
+      %p 評価
+    = link_to '編集', edit_recipe_path, class: 'edit-btn'  
+  -# = link_to '評価ー編集', edit_recipe_assessment_path(@recipe.id)
 
   - if @recipe.assessment.present?
     .assessment
