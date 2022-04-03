@@ -18,3 +18,10 @@ require("channels")
 
 window.$ = window.jQuery = require('jquery');
 require('packs/raty')
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    $('.assessment_btn').on('click', () => {
+        $('.assessment_form').removeClass('hidden')
+    })
+})

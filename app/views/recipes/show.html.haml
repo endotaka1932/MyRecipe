@@ -1,5 +1,5 @@
 = render 'commons/header'
-.container    
+.container#recipe{ date: {recipe_id: @recipe.id} }
   .recipe-row
     .recipe-intro
       .recipe-title
@@ -11,12 +11,14 @@
       .recipe-content
         %p= @recipe.content
   = link_to '編集', edit_recipe_path
-  = link_to '評価', new_recipe_assessment_path(@recipe.id)
+  .assessment_btn
+    %p 評価
+    -# = link_to '評価', new_recipe_assessment_path(@recipe.id)
   = link_to '評価ー編集', edit_recipe_assessment_path(@recipe.id)
   = link_to '評価表示', recipe_assessment_path(@recipe.id)
 
   - if @recipe.assessment.present?
-    .assessment.
+    .assessment
       %p 美味しさ
       .star-vlaue#star-taste1
       %p 作りやすさ
@@ -24,6 +26,30 @@
       %p 費用
       .star-vlaue#star-taste3
 
-    = render 'commons/star-assessment'
+    = render 'commons/star_assessment/show'
+
+.assessment_form.hidden
+  %div
+    = label :taste, '美味しさ'
+  %div.starform#star-taste
+    = hidden_field :taste, id: :review_star
+  %div
+    = label :easily, '作りやすさ'
+  %div.starform#star-easily
+    = hidden_field :easily, id: :review_star  
+  %div
+    = label :cost, '費用'
+  %div.starform#star-cost
+    = hidden_field :cost, id: :review_star  
+  %div
+    = label :revenge, '再挑戦', class: 'app_checkbox'
+  %div.app_checkbox
+    = check_box :revenge, id: :revenge
+    %label{:for => 'revenge'}
+
+  .active
+    = submit_tag 'submit', class: 'active-btn'
+
+  = render 'commons/star_assessment/new'
 
 = render 'commons/footer'
