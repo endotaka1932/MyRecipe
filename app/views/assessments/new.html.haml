@@ -1,54 +1,28 @@
-= form_with(model: @assessment, url:recipe_assessments_path, local: true) do |f|
-  %div
-    = f.label :taste, '美味しさ'
-  %div.starform#star-taste
-    = f.hidden_field :taste, id: :review_star
-  %div
-    = f.label :easily, '作りやすさ'
-  %div.starform#star-easily
-    = f.hidden_field :easily, id: :review_star  
-  %div
-    = f.label :cost, '費用'
-  %div.starform#star-cost
-    = f.hidden_field :cost, id: :review_star  
-  %div
-    = f.label :revenge, '再挑戦', class: 'app_checkbox'
-  %div.app_checkbox
-    = f.check_box :revenge, id: :revenge
-    %label{:for => 'revenge'}
+= render 'commons/header'
+.container
+  .assessment_form
+    = form_with(model: @assessment, url:recipe_assessments_path, local: true) do |f|
+      %div
+        = f.label :taste, '美味しさ'
+      %div.starform#star-taste
+        = f.hidden_field :taste, id: :review_star
+      %div
+        = f.label :easily, '作りやすさ'
+      %div.starform#star-easily
+        = f.hidden_field :easily, id: :review_star  
+      %div
+        = f.label :cost, '費用'
+      %div.starform#star-cost
+        = f.hidden_field :cost, id: :review_star  
+      %div
+        = f.label :revenge, '再挑戦', class: 'app_checkbox'
+      %div.app_checkbox
+        = f.check_box :revenge, id: :revenge
+        %label{:for => 'revenge'}
 
-  .active
-    = f.submit 'submit', class: 'active-btn'
+      .active
+        = f.submit 'submit', class: 'active-btn'
 
-
-  :javascript
-    $('#star-taste').raty({
-      size     : 36,
-      starOff:  '#{asset_path('star-off.png')}',
-      starOn : '#{asset_path('star-on.png')}',
-      starHalf: '#{asset_path('star-half.png')}',
-      scoreName: 'assessment[taste]',
-      half: true,
-    });
-
-  :javascript
-    $('#star-easily').raty({
-      size     : 36,
-      starOff:  '#{asset_path('star-off.png')}',
-      starOn : '#{asset_path('star-on.png')}',
-      starHalf: '#{asset_path('star-half.png')}',
-      scoreName: 'assessment[easily]',
-      half: true,
-    });
-
-  :javascript
-    $('#star-cost').raty({
-      size     : 36,
-      starOff:  '#{asset_path('star-off.png')}',
-      starOn : '#{asset_path('star-on.png')}',
-      starHalf: '#{asset_path('star-half.png')}',
-      scoreName: 'assessment[cost]',
-      half: true,
-    });
+      = render 'commons/star_assessment/new'
 
 = render 'commons/footer'
