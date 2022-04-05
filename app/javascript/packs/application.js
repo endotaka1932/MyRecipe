@@ -21,7 +21,11 @@ require('packs/raty')
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    $('.assessment_btn').on('click', () => {
-        $('.assessment_form').removeClass('hidden')
+    $('.assessment_show_btn').on('click', () => {
+        $('.assessment_show').removeClass('hidden')
+    })
+
+    $('.active-btn').on('click', () => {
+        $('.assessment_form').addClass('hidden')
     })
 })

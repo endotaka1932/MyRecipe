@@ -11,6 +11,11 @@
     .recipe-url { 
         @include box;
         padding: 3px 5px;
+
+        a {
+            display: inline-block;
+            width: 80%;
+        }
     }
     .recipe-info {
         margin-top: 5px;
@@ -33,6 +38,10 @@
     float: right;
     margin-top: 7px;
     display: flex;
+
+    p {
+        margin-bottom: 0;
+    }
 
     .assessment_btn {
         @include btn;

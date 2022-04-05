@@ -25,6 +25,7 @@ class AssessmentsController < ApplicationController
     def update
         recipe = Recipe.find(params[:recipe_id])
         @assessment = recipe.build_assessment(assessment_params)
+        @assessment.revenge = params[:revenge]
         if @assessment.update(assessment_params)
             redirect_to recipe_path(recipe.id)
         else
