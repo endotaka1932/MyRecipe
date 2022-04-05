@@ -15,15 +15,40 @@
     = link_to '編集', edit_recipe_path, class: 'edit-btn'  
   -# = link_to '評価ー編集', edit_recipe_assessment_path(@recipe.id)
 
-  - if @recipe.assessment.present?
-    .assessment
-      %p 美味しさ
-      .star-vlaue#star-taste1
-      %p 作りやすさ
-      .star-vlaue#star-taste2
-      %p 費用
-      .star-vlaue#star-taste3
+  -# - if @recipe.assessment.present?
+  -#   .assessment
+  -#     %p 美味しさ
+  -#     .star-vlaue#star-taste1
+  -#     %p 作りやすさ
+  -#     .star-vlaue#star-taste2
+  -#     %p 費用
+  -#     .star-vlaue#star-taste3
 
-    = render 'commons/star_assessment/show'
+  -#   = render 'commons/star_assessment/show'
+
+  = form_tag(recipe_assessments_path(@recipe.id), method: :post) do
+    .assessment_form
+      %div
+        = label :taste, '美味しさ'
+      %div.starform#star-taste
+        = hidden_field_tag :taste, id: :review_star
+      %div
+        = label :easily, '作りやすさ'
+      %div.starform#star-easily
+        = hidden_field_tag :easily, id: :review_star  
+      %div
+        = label :cost, '費用'
+      %div.starform#star-cost
+        = hidden_field_tag :cost, id: :review_star  
+      %div
+        = label :revenge, '再挑戦', class: 'app_checkbox'
+      %div.app_checkbox
+        = check_box_tag :revenge, true
+        %label{:for => 'revenge'}
+
+      .active
+        = submit_tag 'submit', class: 'active-btn'
+
+      = render 'commons/star_assessment/new'
 
 = render 'commons/footer'
