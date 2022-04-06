@@ -52,10 +52,11 @@
             = check_box_tag :revenge, true
             %label{:for => 'revenge'}
           
-          .cancel
-            %p.cancel_btn cancel
           .active
             = submit_tag 'edit', class: 'assessment_active_btn'
+          .cancel
+            %p.cancel_btn cancel
+
 
 
           = render 'commons/star_assessment/edit'
@@ -80,11 +81,12 @@
           %div.app_checkbox
             = check_box_tag :revenge, true
             %label{:for => 'revenge'}
-
-          .cancel
-            %p.cancel_btn cancel
+            
           .active
             = submit_tag 'submit', class: 'assessment_active_btn'
+          .cancel
+            %p.cancel_btn cancel
+
 
           = render 'commons/star_assessment/new'
 

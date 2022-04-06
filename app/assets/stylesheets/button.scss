@@ -40,9 +40,19 @@
     p {
         line-height: 30px;
         font-size: 13px;
+        color: #fff;
+    }
+
+    a {
+        display: block;
+        line-height: 30px;
+        color: #fff;
+        font-size: 13px;
     }
     .cancel_btn {
         @include active_btn;
         text-align: center;
+        background-color: #f0f0f0;
+        margin-top: 5px;
     }
 }
