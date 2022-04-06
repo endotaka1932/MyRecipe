@@ -1,12 +1,14 @@
 @import 'variables';
 @import 'devise';
 @import 'header';
-@import 'recipe';
+@import 'home';
 @import 'font-awesome';
 @import 'footer';
 @import 'form';
 @import 'button';
 @import 'check_box';
+@import 'recipe';
+@import 'assessment';
 
 
 html {
@@ -21,4 +23,8 @@ body {
         text-decoration: none;
         color: #000000;
     }
+}
+
+.hidden {
+    display: none;
 }

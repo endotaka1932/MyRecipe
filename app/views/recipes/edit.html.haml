@@ -23,5 +23,5 @@
       = f.collection_check_boxes :categorys, Category.all, :id, :foodclass, { checked: @category_ids.map(&:to_param) }
 
     .active
-      = f.submit 'update', class: 'active-btn'
+      = f.submit 'update', class: 'btn, active-btn'
 = render 'commons/footer'

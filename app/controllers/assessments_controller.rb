@@ -1,10 +1,6 @@
 class AssessmentsController < ApplicationController
     before_action :authenticate_user!
 
-    def show
-        @recipe = Recipe.find(params[:recipe_id])
-    end
-
     def new
         recipe = Recipe.find(params[:recipe_id])
         @assessment = recipe.build_assessment
@@ -13,6 +9,7 @@ class AssessmentsController < ApplicationController
     def create
         recipe = Recipe.find(params[:recipe_id])
         @assessment = recipe.build_assessment(assessment_params)
+        @assessment.revenge = params[:revenge]
         if @assessment.save
             redirect_to recipe_path(recipe.id)
         else
@@ -22,20 +19,20 @@ class AssessmentsController < ApplicationController
 
     def edit
         @recipe = Recipe.find(params[:recipe_id])
+        @assessment = @recipe.assessment
     end
 
     def update
         recipe = Recipe.find(params[:recipe_id])
-        if @assessment.update(assessment_pamras)
+        @assessment = recipe.build_assessment(assessment_params)
+        @assessment.revenge = params[:revenge]
+        if @assessment.update(assessment_params)
             redirect_to recipe_path(recipe.id)
         else
             render :edit
         end
     end
 
-    def destroy
-
-    end
 
     private
         def assessment_params
