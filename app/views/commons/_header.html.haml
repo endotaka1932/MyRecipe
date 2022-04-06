@@ -1,3 +1,11 @@
 .header
+  - if !current_page?(root_path)
+    .header-left
+      = link_to :back do
+        %i.fa-solid.fa-angles-left
+  -else
+    .header-left
   .header-title
     %h2 My Recipe
+  .header-right
+    %i.fa-solid.fa-bars
