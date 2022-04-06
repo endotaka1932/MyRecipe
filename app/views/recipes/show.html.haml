@@ -16,7 +16,8 @@
         %p.assessment_btn 再評価
       - else
         %p.assessment_btn 評価
-    = link_to '編集', edit_recipe_path, class: 'edit-btn'  
+    = link_to '編集', edit_recipe_path, class: 'edit-btn'
+    = link_to '削除', recipe_path(@recipe.id), data: { method: 'delete', confirm: '本当に削除しますか' }, class: 'edit-btn'
 
   - if @recipe.assessment.present?
     .assessment
@@ -50,9 +51,12 @@
           %div.app_checkbox
             = check_box_tag :revenge, true
             %label{:for => 'revenge'}
-
+          
+          .cancel
+            %p.cancel_btn cancel
           .active
-            = submit_tag 'edit', class: 'active-btn'
+            = submit_tag 'edit', class: 'assessment_active_btn'
+
 
           = render 'commons/star_assessment/edit'
 
@@ -77,9 +81,12 @@
             = check_box_tag :revenge, true
             %label{:for => 'revenge'}
 
+          .cancel
+            %p.cancel_btn cancel
           .active
-            = submit_tag 'submit', class: 'active-btn'
+            = submit_tag 'submit', class: 'assessment_active_btn'
 
           = render 'commons/star_assessment/new'
+
 
 = render 'commons/footer'

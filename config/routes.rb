@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
 
   resources :recipes do
-    resources :assessments, only: [:new, :create, :edit, :update, :destroy]
+    resources :assessments, only: [:new, :create, :edit, :update]
   end
 end

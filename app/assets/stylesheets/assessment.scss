@@ -1,0 +1,27 @@
+.assessment {
+    margin-top: 50px;
+    margin-left: 10px;
+
+    p {
+        margin-top: 10px;
+        margin-bottom: 3px;
+        font-size: 15px;
+    }
+}
+
+.assessment_show {
+    margin-top: 50px;
+    margin-left: 10px;  
+    
+    label {
+        display: block;
+        margin-top: 7px;
+        font-size: 15px;
+    }
+
+    .cancel {
+        p {
+            margin: 0;
+        }
+    }
+}

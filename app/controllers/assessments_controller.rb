@@ -33,9 +33,6 @@ class AssessmentsController < ApplicationController
         end
     end
 
-    def destroy
-
-    end
 
     private
         def assessment_params

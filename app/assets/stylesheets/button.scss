@@ -9,7 +9,7 @@
     font-weight: bold;
 }
 
-.active-btn {
+@mixin active_btn {
     margin-top: 40px;
     width: 100%;
     height: 30px;
@@ -20,6 +20,29 @@
     background-color: #FEDCCC;
 }
 
+.active-btn {
+    @include active_btn;
+}
+
 .edit-btn {
     @include btn;
+    margin-left: 10px;
+}
+
+.assessment_active_btn {
+    @include active_btn;
+    margin-top: 10px;
+}
+
+.cancel {
+    margin-top: 10px;
+
+    p {
+        line-height: 30px;
+        font-size: 13px;
+    }
+    .cancel_btn {
+        @include active_btn;
+        text-align: center;
+    }
 }
