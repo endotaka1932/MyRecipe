@@ -13,15 +13,26 @@
         padding: 3px 5px;
 
         a {
+            color: #1A0DAB	;
             display: inline-block;
             width: 80%;
+            margin-top: 5px;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        a:hover {
+            color:#979797;
+        }
+        a:active {
+            color:#979797;
         }
     }
     .recipe-info {
         margin-top: 5px;
         padding: 5px 3px;
         span {
-            font-size: 12px;
+            font-size: 10px;
             color: #575757
         }
     }

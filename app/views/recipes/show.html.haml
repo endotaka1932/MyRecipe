@@ -5,7 +5,7 @@
       .recipe-title
         %h2= @recipe.title
       .recipe-url
-        %a= 'リンク先：' + @recipe.url
+        = link_to 'リンク先', @recipe.url, target: :_blank, rel: 'noopener noreferrer'
         .recipe-info
           %span= @recipe.info
       .recipe-content
@@ -81,7 +81,7 @@
           %div.app_checkbox
             = check_box_tag :revenge, true
             %label{:for => 'revenge'}
-            
+
           .active
             = submit_tag 'submit', class: 'assessment_active_btn'
           .cancel
