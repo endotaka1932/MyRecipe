@@ -24,4 +24,7 @@
 
     .active
       = f.submit 'update', class: 'btn, active-btn'
+    .cancel
+      = link_to 'cancel', recipe_path, class: 'cancel_btn' 
+
 = render 'commons/footer'

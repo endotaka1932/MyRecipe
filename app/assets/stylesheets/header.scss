@@ -1,6 +1,8 @@
 .header {
     height: 60px;
     background: $primary-color;
+    display: flex;
+    justify-content: space-between;
 
     .header-title {
         h2 {
@@ -8,6 +10,21 @@
             text-align: center;
             color: #fff;
             line-height: 60px;
+        }
+    }
+    .header-left {
+        margin-left: 10px;
+        a {
+            color: #fff;
+            line-height: 70px;
+        }
+    }
+
+    .header-right {
+        margin-right: 10px;
+        i {
+            color: #fff;
+            line-height: 60px;           
         }
     }
 }
