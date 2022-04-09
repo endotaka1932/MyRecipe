@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :assessments, only: [:new, :create, :edit, :update]
   end
+
+  resources :categorys, only: [:index]
+
 end

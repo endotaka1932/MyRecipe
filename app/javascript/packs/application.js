@@ -20,7 +20,7 @@ window.$ = window.jQuery = require('jquery');
 require('packs/raty')
 
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
     $('.assessment_show_btn').on('click', () => {
         $('.assessment_show').removeClass('hidden')
         $('.assessment').addClass('hidden')
