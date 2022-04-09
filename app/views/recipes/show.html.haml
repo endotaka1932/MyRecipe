@@ -48,16 +48,18 @@
             = hidden_field_tag :cost, id: :review_star  
           %div
             = label :revenge, '再挑戦', class: 'app_checkbox'
-          %div.app_checkbox
-            = check_box_tag :revenge, true
-            %label{:for => 'revenge'}
-          
+          - if @recipe.assessment.revenge.blank?
+            %div.app_checkbox
+              = check_box_tag :revenge, true
+              %label{:for => 'revenge'}
+          -else
+            %div.app_checkbox
+              = check_box_tag :revenge, true, checked = 'checked'
+              %label{:for => 'revenge'}          
           .active
             = submit_tag 'edit', class: 'assessment_active_btn'
           .cancel
             %p.cancel_btn cancel
-
-
 
           = render 'commons/star_assessment/edit'
 
@@ -79,14 +81,13 @@
           %div
             = label :revenge, '再挑戦', class: 'app_checkbox'
           %div.app_checkbox
-            = check_box_tag :revenge, true
+            = check_box_tag :revenge, true, false
             %label{:for => 'revenge'}
 
           .active
             = submit_tag 'submit', class: 'assessment_active_btn'
           .cancel
             %p.cancel_btn cancel
-
 
           = render 'commons/star_assessment/new'
 
