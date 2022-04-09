@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   resources :revenges, only: [:index]
 
+  resources :nocreateds, only: [:index]
+
 end
