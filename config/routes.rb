@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   resources :nocreateds, only: [:index]
 
+  resources :searches, only: [:index, :show]
+
 end
