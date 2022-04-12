@@ -1,0 +1,28 @@
+= render 'commons/header'
+.container
+  .category_images
+    .rice.bg
+      = link_to categorys_rice_path do
+        %i.fa-solid.fa-bowl-rice.icon
+        %p Rice
+    .soup.bg
+      = link_to categorys_soup_path do
+        %i.fa-solid.fa-mug-hot.icon
+        %p Soup
+    .main.bg
+      = link_to categorys_main_path do
+        %i.fa-solid.fa-pizza-slice.icon
+        %p Main
+    .side.bg
+      = link_to categorys_side_path do
+        %i.fa-solid.fa-carrot.icon
+        %p side
+    .dessert.bg
+      = link_to categorys_dessert_path do
+        %i.fa-solid.fa-cake-candles.icon
+        %p dessert
+    .other.bg
+      = link_to categorys_others_path do
+        %i.fa-solid.fa-utensils.icon
+        %p others
+= render 'commons/footer'

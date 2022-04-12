@@ -13,4 +13,13 @@ Rails.application.routes.draw do
 
   resources :searches, only: [:index, :show]
 
+  namespace :categorys do
+    resource :rice, only: [:show]
+    resource :soup, only: [:show]
+    resource :main, only: [:show]
+    resource :side, only: [:show]
+    resource :dessert, only: [:show]
+    resource :others, only: [:show]
+  end
+
 end
