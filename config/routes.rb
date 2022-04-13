@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :searches, only: [:index]
 
-  resource :search_result, only: [:show]
+  resources :search_results, only: [:index]
 
 
   namespace :categorys do
