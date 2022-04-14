@@ -22,8 +22,16 @@
         display: flex;
         justify-content: space-around;
         padding: 15px 0;
+
+        text-align: center;
         a {
             color: $primary-color;
+        }
+        p {
+            margin-top: 3px;
+            margin-bottom: 0;
+            color: #E8E8E8;
+            font-size: 5px;
         }
 
         box-shadow: 0 -2px 20px 0 rgb(173, 173, 173);
