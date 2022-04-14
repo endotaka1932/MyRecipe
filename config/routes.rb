@@ -11,4 +11,18 @@ Rails.application.routes.draw do
 
   resources :nocreateds, only: [:index]
 
+  resources :searches, only: [:index]
+
+  resources :search_results, only: [:index]
+
+
+  namespace :categorys do
+    resource :rice, only: [:show]
+    resource :soup, only: [:show]
+    resource :main, only: [:show]
+    resource :side, only: [:show]
+    resource :dessert, only: [:show]
+    resource :others, only: [:show]
+  end
+
 end

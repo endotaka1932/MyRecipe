@@ -14,4 +14,5 @@
 #
 class Category < ApplicationRecord
     has_many :recipe_categorys
+    belongs_to :recipe
 end
