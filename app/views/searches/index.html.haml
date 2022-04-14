@@ -2,7 +2,7 @@
 .container
   .search_form
     = form_with(url: search_results_path, method: 'GET', local: true) do |f|
-      = f.text_field :word
+      = f.text_field :word, class: 'search_text'
       = f.submit '検索'
 
   .category_images
