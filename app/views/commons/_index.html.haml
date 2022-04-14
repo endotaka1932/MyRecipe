@@ -1,0 +1,18 @@
+= render 'commons/header'
+.container    
+  - recipes.each do |recipe|
+    .recipe-row
+      .recipe-row-contents
+        = link_to recipe_path(recipe.id) do
+          .recipe-category-imag
+            = image_tag 'Bitmap.png'
+          .recipe-intro
+            .recipe-title
+              %p= recipe.title
+            .recipe-info
+              %span= recipe.info
+      .recipe-trash
+        = link_to recipe_path(recipe.id), data: { method: 'delete', confirm: '本当に削除しますか' } do
+          %i.fa-solid.fa-trash
+
+= render 'commons/footer'
