@@ -3,16 +3,20 @@
     = link_to new_recipe_path do
       %i.fa-solid.fa-circle-plus
   .footer_menu
-    .home-btn
+    .home-btn{class: "#{add_active_class(root_path)}"}
       = link_to root_path do
         %i.fa-solid.fa-house
-    .revenge-btn
+      %p ホーム
+    .revenge-btn{class: "#{add_active_class(revenges_path)}"}
       = link_to revenges_path do
         %i.fa-solid.fa-fire
+      %p リベンジ
     .nill
-    .nomake-btn
+    .nomake-btn{class: "#{add_active_class(nocreateds_path)}"}
       = link_to nocreateds_path do
         %i.fa-solid.fa-kitchen-set
-    .search-btn
+      %p 未作成
+    .search-btn{class: "#{add_active_class(searches_path)}"}
       = link_to searches_path do
         %i.fa-solid.fa-magnifying-glass
+      %p 検索
