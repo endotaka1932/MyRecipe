@@ -2,7 +2,6 @@
     padding: 15px 0;
     width: 90%;
     margin: auto;
-
 }
 
 .recipe-row {
@@ -17,6 +16,13 @@
             display: block;
             display: flex;
         }
+
+        .recipe-category-image {
+            i {
+                line-height: 61px;
+            }
+        }
+
         .recipe-intro {
             margin-left: 20px;
             .recipe-title {

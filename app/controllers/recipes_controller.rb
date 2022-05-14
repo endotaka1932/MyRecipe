@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
 
     def edit
         @recipe = current_user.recipes.find(params[:id])
-        @category_ids = @recipe.categorys.pluck(:id)
+        @category_ids = @recipe.categories.pluck(:id)
     end
 
     def update
