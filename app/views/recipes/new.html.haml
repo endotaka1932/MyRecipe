@@ -20,7 +20,7 @@
     %div
       = f.label :category, 'カテゴリー', class: 'category-item'
     %div.checkbox
-      = f.collection_check_boxes :categorys, Category.all, :id, :foodclass
+      = f.collection_check_boxes :categories, Category.all, :id, :foodclass
 
     .active
       = f.submit 'submit', class: 'active-btn'

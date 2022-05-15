@@ -20,7 +20,7 @@
     %div
       = f.label :category, 'カテゴリー', class: 'category-item'
     %div.checkbox
-      = f.collection_check_boxes :categorys, Category.all, :id, :foodclass, { checked: @category_ids.map(&:to_param) }
+      = f.collection_check_boxes :categorise, Category.all, :id, :foodclass, { checked: @category_ids.map(&:to_param) }
 
     .active
       = f.submit 'update', class: 'btn, active-btn'

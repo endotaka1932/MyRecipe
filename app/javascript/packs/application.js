@@ -27,12 +27,24 @@ document.addEventListener('turbolinks:load', () => {
     })
 
     $('.assessment_active_btn').on('click', () => {
-        $('.assessment_form').addClass('hidden')
+        $('.assessment_show').addClass('hidden')
         $('.assessment').removeClass('hidden')
     })
 
     $('.cancel').on('click', () => {
-        $('.assessment_form').addClass('hidden')
+        $('.assessment_show').addClass('hidden')
         $('.assessment').removeClass('hidden')
+    })
+
+
+
+    $('.openbtn').on('click', () => {
+        $('.openbtn').toggleClass('active')
+        $('#g-nav').toggleClass('panelactive')
+    })
+
+    $('#g-nav a').on('click', () => {
+        $('.openbtn').removeClass('active')
+        $('#g-nav').removeClass('panelactive')
     })
 })

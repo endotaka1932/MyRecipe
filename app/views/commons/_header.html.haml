@@ -8,4 +8,13 @@
   .header-title
     %h2 My Recipe
   .header-right
-    %i.fa-solid.fa-bars
+    .openbtn
+      %span
+      %span
+      %span
+    %nav#g-nav
+      %ul
+        %li
+          = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+        %li
+          = link_to 'お問い合わせ'

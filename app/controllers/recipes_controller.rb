@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
 
     def create
         @recipe = current_user.recipes.build(recipe_params)
-        @category_ids = params[:recipe][:categorys]
+        @category_ids = params[:recipe][:categories]
         if @recipe.save
             @recipe.get_category_ids(@category_ids, @recipe)
             
@@ -27,12 +27,12 @@ class RecipesController < ApplicationController
 
     def edit
         @recipe = current_user.recipes.find(params[:id])
-        @category_ids = @recipe.categorys.pluck(:id)
+        @category_ids = @recipe.categories.pluck(:id)
     end
 
     def update
         @recipe = current_user.recipes.find(params[:id])
-        @category_ids = params[:recipe][:categorys]
+        @category_ids = params[:recipe][:categories]
         if @recipe.update(recipe_params)
             RecipeCategory.where(recipe_id: @recipe.id).destroy_all
             @recipe.get_category_ids(@category_ids, @recipe)

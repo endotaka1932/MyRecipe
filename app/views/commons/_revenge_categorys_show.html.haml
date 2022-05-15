@@ -5,7 +5,20 @@
       .recipe-row-contents
         = link_to recipe_path(assessment.recipe_id) do
           .recipe-category-imag
-            = image_tag 'Bitmap.png'
+            - if assessment.recipe.category_ids.size >= 2
+              %i.fa-solid.fa-utensils
+            - elsif assessment.recipe.category_ids[0] == 1
+              %i.fa-solid.fa-bowl-rice
+            - elsif assessment.recipe.category_ids[0] == 2
+              %i.fa-solid.fa-mug-hot
+            - elsif assessment.recipe.category_ids[0] == 3
+              %i.fa-solid.fa-pizza-slice
+            - elsif assessment.recipe.category_ids[0] == 4
+              %i.fa-solid.fa-carrot
+            - elsif assessment.recipe.category_ids[0] == 5
+              %i.fa-solid.fa-cake-candles
+            - else
+              %i.fa-solid.fa-utensils
           .recipe-intro
             .recipe-title
               %p= assessment.recipe.title
