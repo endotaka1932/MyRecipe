@@ -33,7 +33,6 @@ class AssessmentsController < ApplicationController
         end
     end
 
-
     private
         def assessment_params
             params.require(:assessment).permit(:taste, :easily, :cost, :revenge)
