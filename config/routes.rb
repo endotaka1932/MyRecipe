@@ -25,6 +25,6 @@ Rails.application.routes.draw do
     resource :others, only: [:show]
   end
 
-  resource :contact, only: [:show]
+  resource :contact, only: [:new, :create]
 
 end

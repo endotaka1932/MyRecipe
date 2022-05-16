@@ -1,0 +1,16 @@
+= render 'commons/header'
+.container
+  = form_with(model: @contact, url: new_contact_path, local: true) do |f|
+    %div
+      = f.label :email 
+    %div
+      = f.text_field :email
+    %div
+      = f.label :content, '問い合わせ内容'
+    %div
+      = f.text_area :content
+
+    .active
+      = f.submit '送信'
+
+= render 'commons/footer'
