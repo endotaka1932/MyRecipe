@@ -1,0 +1,3 @@
+class ContactsMailer < ApplicationMailer
+    
+end

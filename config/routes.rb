@@ -25,4 +25,6 @@ Rails.application.routes.draw do
     resource :others, only: [:show]
   end
 
+  resource :contact, only: [:show]
+
 end
