@@ -56,3 +56,10 @@
         margin-top: 5px;
     }
 }
+
+.contact_form_btn {
+    @include active_btn;
+    background-color: #fff;
+    border: solid rgb(206, 206, 206) 0.1em;
+    color: #000;
+}

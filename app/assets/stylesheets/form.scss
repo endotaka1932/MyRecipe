@@ -59,3 +59,20 @@ label {
     font-weight: bold;
 }
 
+.contact_label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact_field {
+    @include form(25px);
+    border: solid #e7e7e7 0.1em;
+    background-color: #fff;
+}
+
+.contact_area {
+    @include form(150px);
+    border: solid #e7e7e7 0.1em;
+    background-color: #fff;
+}

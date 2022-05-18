@@ -1,16 +1,16 @@
 = render 'commons/header'
 .container
-  = form_with(model: @contact, url: new_contact_path, local: true) do |f|
+  = form_with(model: @contact, url: contact_path, local: true) do |f|
+    %div.contact_label
+      = f.label :email, '返信先 ※必須'
     %div
-      = f.label :email 
-    %div
-      = f.text_field :email
-    %div
+      = f.text_field :email, class: 'contact_field', placeholder: ' 例）myrecipe@example.com'
+    %div.contact_label
       = f.label :content, '問い合わせ内容'
     %div
-      = f.text_area :content
+      = f.text_area :content, class: 'contact_area'
 
     .active
-      = f.submit '送信'
+      = f.submit '送信', class: 'contact_form_btn'
 
 = render 'commons/footer'
