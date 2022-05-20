@@ -18,8 +18,4 @@
           = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
         %li
           = link_to 'お問い合わせ', new_contact_path
-
-- if flash.present?
-  .flash
-    - flash.each do |key, value|
-      %div{:class => key}= value
+          
