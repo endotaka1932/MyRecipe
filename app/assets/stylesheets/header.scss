@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-between;
 
+    position: relative;
+
     .header-title {
         h2 {
             margin: auto;
@@ -47,5 +49,4 @@
             }
         }
     }
-
 }
