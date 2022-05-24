@@ -27,13 +27,18 @@
         a:active {
             color:#979797;
         }
+
+        span {
+            overflow-wrap: break-word;
+        }
     }
     .recipe-info {
         margin-top: 5px;
         padding: 5px 3px;
         span {
             font-size: 10px;
-            color: #575757
+            color: #575757;
+            overflow-wrap: break-word;
         }
     }
     .recipe-content {

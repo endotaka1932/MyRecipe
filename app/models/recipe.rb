@@ -17,6 +17,8 @@
 #
 class Recipe < ApplicationRecord
     
+    validates :title, presence: true, length: {maximum: 25}
+
     belongs_to :user
     has_many :recipe_categorys
     has_many :categories, through: :recipe_categorys, dependent: :destroy
