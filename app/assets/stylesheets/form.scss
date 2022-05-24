@@ -1,10 +1,11 @@
 @mixin form($value) {
-    width: 100%;
+    width: 99%;
     height: $value;
     background-color: #f6f6f6;
     border: none;
     border-radius: 0 5px 5px 5px;
     margin-bottom: 18px;
+    font-size: 12px;
 }
 
 input::placeholder {

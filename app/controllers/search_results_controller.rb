@@ -3,6 +3,6 @@ class SearchResultsController < ApplicationController
     
     def index
         @word = params[:word]
-        @recipes = Recipe.where("title LIKE?", "%#{@word}%")
+        @recipes = Recipe.where("title LIKE?", "%#{@word}%").order(created_at: :DESC)
     end
 end

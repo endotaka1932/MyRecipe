@@ -1,16 +1,21 @@
 .container {
-    padding: 15px 0;
+    padding: 15px 15px 0 15px;
     width: 90%;
     margin: auto;
+    margin-right: 0;
+    height: 600px;
+    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 .recipe-row {
     display: flex;
+    
     .recipe-row-contents {
         display: flex;
         padding: 8px 0;
         border-bottom:1px solid #F6F6F6 ;
-        width: 100%;
+        width: 80%;
         a{
             width: 100%;
             display: block;
