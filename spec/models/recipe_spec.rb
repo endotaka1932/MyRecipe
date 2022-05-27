@@ -12,10 +12,14 @@ RSpec.describe Recipe, type: :model do
   end
 
   context 'タイトルが26文字以上である場合' do
-    let!(:recipe) { build(:build, title: Faker::Lorem.characters(number: 26), user: user )}
+    let!(:recipe) { build(:recipe, title: Faker::Lorem.characters(number: 26), user: user) }
 
-    # it 'レシピが保存できない' do
-    #   expect(recipe.errors.message[:title[0]].to eq('')
-    # end
+    before do
+      recipe.save
+    end
+
+    it 'レシピが保存できない' do
+      expect(recipe.errors.messages[:title][0]).to eq('は25文字以内で入力してください')
+    end
   end
 end
