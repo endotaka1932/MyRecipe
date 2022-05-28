@@ -9,6 +9,9 @@ ja:
     attributes:
       recipe:
         title: 'タイトル'
+    attributes:
+      contact:
+        content: '内容'
   date:
     abbr_day_names:
     - 日
