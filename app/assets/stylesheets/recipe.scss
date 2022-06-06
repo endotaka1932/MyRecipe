@@ -4,6 +4,17 @@
     box-shadow: 0 0 8px rgb(173, 173, 173);
 }
 
+@mixin btn {
+    margin-top: 5px;
+    padding: 3px;
+    color: #fff;
+    background-color: #F77C42;
+    border: 3px outset #F77C42;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 
 .recipe-intro {
     width: 100%;
