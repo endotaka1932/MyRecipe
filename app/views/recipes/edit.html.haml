@@ -1,5 +1,6 @@
 = render 'commons/header'
 .container
+  = render 'commons/errors', model: @recipe
   = form_with(model: @recipe, local: true) do |f|
     %div
       = f.label :title, '料理名', class: 'item'
