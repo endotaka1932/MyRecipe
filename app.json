@@ -3,7 +3,7 @@
     "description": "This is Recipe",
     "keywords": [],
     "website": "",
-    "repository": "https://github.com/endotaka1932/MyRecipe.git",
+    "repository": "https://github.com/endotaka1932/MyRecipe",
     "env": {},
     "addons": [
       "heroku-postgresql:hobby-dev"
