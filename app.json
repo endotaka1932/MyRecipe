@@ -1,0 +1,16 @@
+{
+    "name": "MyRecipe",
+    "description": "This is Recipe",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/endotaka1932/MyRecipe.git",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
