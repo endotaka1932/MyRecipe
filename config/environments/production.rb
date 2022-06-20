@@ -109,4 +109,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  host = 'https://myrecipen.herokuapp.com/'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings         = {
+      address:              'smtp.sendgrid.net',
+      user_name:            'apikey',
+      password:             ENV['SENDGRID_API_KEY'],
+      authentication:       :plain,
+      domain:               'herokuapp.com',
+      port:                 '587',
+      enable_starttls_auto: true,
+  }
 end
